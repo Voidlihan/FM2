@@ -14,20 +14,39 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="44*"/>
             <RowDefinition Height="107*"/>
-            <RowDefinition Height="102*"/>
-            <RowDefinition Height="89*"/>
-            <RowDefinition Height="92*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
 
         <TextBox Name="profileUsername" Padding="1,7,0,0" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Text="Имя" Foreground="#FF9E9A9A" Height="41" FontSize="18"/>
-        <Menu Background="ForestGreen" Grid.Column="1" Margin="0,43,280,0" Grid.RowSpan="2">
-            <MenuItem Header="Favorite Categories" Foreground="#FFE8FF00">
 
-            </MenuItem>
-        </Menu>
         <TextBox x:Name="profileUsername_Copy" Padding="1,7,0,0" HorizontalAlignment="Center" Margin="0,61,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Text="Фамилия" Foreground="#FF9E9A9A" Height="41" FontSize="18"/>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="107" Width="122" Grid.Row="1" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
-        <Image Source="user-icon.jpg"/>
+        <Image Source="user-icon.jpg" Margin="64,44,64,0" Grid.RowSpan="2"/>
+        <Button HorizontalAlignment="Left" Margin="241,64,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="52">
+            <Image Source="upload.png" Height="29" Width="42"/>
+            <Button.Template>
+                <ControlTemplate  TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="{x:Null}"></Ellipse>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></Label>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
+        <TextBox x:Name="profileUsername_Copy1" Padding="1,7,0,0" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Text="Электронная почта" Foreground="#FF9E9A9A" Height="41" FontSize="18" Margin="0,7,0,0"/>
+        <Button Content="Сохранить изменения" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="34" Width="248" BorderBrush="ForestGreen" Background="ForestGreen" Foreground="White" FontWeight="Bold" FontSize="15"/>
+        <TextBox x:Name="profileUsername_Copy2" Padding="1,7,0,0" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Text="Адрес" Foreground="#FF9E9A9A" Height="40" FontSize="18" Margin="0,56,0,0" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Text="Ваш профиль" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="130" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0,44,0,0" Grid.RowSpan="2">
+            <Menu Margin="20 0 25 0" Background="ForestGreen" FontSize="100" Height="34" Width="172">
+                <MenuItem Header="Избранные категории" Foreground="White" FontWeight="Bold"  FontSize="15" Padding="3 0 0 0" Height="32" Width="172"/>
+            </Menu>
+            <Menu Background="ForestGreen" Height="34" Width="172">
+                <MenuItem Header="Добавить категории" Foreground="White" FontWeight="Bold" FontSize="15" Padding="10 0 0 0" Height="32" Width="172"/>
+            </Menu>
+        </StackPanel>
+
     </Grid>
 </Window>
