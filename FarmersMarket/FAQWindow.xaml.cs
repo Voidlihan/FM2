@@ -12,14 +12,15 @@ using System.Windows.Shapes;
 
 namespace FarmersMarket
 {
-    /// <summary>
-    /// Interaction logic for WindowProfile.xaml
-    /// </summary>
-    public partial class WindowProfile : Window
+    
+   
+    public partial class FAQWindow : Window
     {
-        public WindowProfile()
+        private MainWindow mainWindow;
+        public FAQWindow(MainWindow mainWin)
         {
             InitializeComponent();
+            mainWindow = mainWin;
         }
     }
 }

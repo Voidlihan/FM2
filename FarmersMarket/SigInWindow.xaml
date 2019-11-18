@@ -1,0 +1,30 @@
+﻿<Window x:Class="FarmersMarket.SignInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FarmersMarket"
+        mc:Ignorable="d"
+        Title="SignIn" Height="444" Width="332" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="221*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="46*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="UserIcon" Source="Images/user-icon.jpg" Grid.Column="1" Grid.Row="1"/>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
+            <TextBox x:Name="loginSignIn" Text="Email" Margin="0 48 0 0" Width="220" Height="30" FontSize="16" FontFamily="Javanese Text" FontWeight="Bold" Foreground="#FF9E9A9A"/>
+            <PasswordBox x:Name="passwordSignIn" PasswordChar="*" MinHeight="15" Width="220" Height="30" FontWeight="Bold" FontSize="16" FontFamily="Javanese Text" Foreground="#FF9E9A9A"/>
+            <Button Background="ForestGreen" Content="Войти" Margin="0 17 0 0" Width="220" Height="30" Foreground="White" FontFamily="Arial Black" Click="SignInButtonClick"/>
+            <TextBlock Margin="108 0 0 0" Text="или" TextWrapping="Wrap" Foreground="ForestGreen" FontWeight="Bold"/>
+            <Button Background="ForestGreen" Content="Регистрация" Width="220" Height="30" Foreground="White" FontFamily="Arial Black" Click="SignUpButtonClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

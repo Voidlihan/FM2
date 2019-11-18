@@ -4,14 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FarmersMarket"
-        mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" Height="450" Width="800" Title="MainScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="133*"/>
             <ColumnDefinition Width="267*"/>
-            <ColumnDefinition Width="295*"/>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="208*"/>
             <ColumnDefinition Width="105*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -20,29 +19,30 @@
             <RowDefinition Height="311*"/>
             <RowDefinition Height="39*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" Margin="0,0,4,0">
-            <Button Content="Вход" Name="Registr" Width="62" Height="15" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White"/>
-            <Button Content="Профиль" x:Name="Profiles" Width="80" Height="15" Padding="0 -2 0 0" Margin="20 0 20 0" BorderBrush="{x:Null}" Background="{x:Null}"/>
-            <Button Content="Корзина" x:Name="Basket" Width="80" Height="15" Padding="0 -2 0 0" BorderBrush="{x:Null}" Background="{x:Null}"/>
-
+        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="0">
+            <Button Name="profileButton" Content="Профиль" Width="80" Height="15" Padding="0 -2 0 0" Margin="20 0 20 0" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden" Click="profileButtonClick"/>
+            <Button Name="signInButton" Content="Вход" Width="62" Height="15" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White" Click="SignInClick" Visibility="Visible"/>
+            <Button Name="cartButton" Content="Корзина" Width="80" Height="15" Padding="0 -2 0 0" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,14,4,0" Grid.Column="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,14,4,0" Grid.Column="1">
             <Button Content="Информация" Name="Info" Grid.Column="2" Grid.Row="1" Width="80" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White"/>
-            <Button Content="Помощь" Name="Help" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" BorderBrush="White" Background="{x:Null}"/>
+            <Button Content="Помощь" Name="Help" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" BorderBrush="White" Background="{x:Null}" Click="helpsClick"/>
             <Button Content="Call Center" Name="Call_Center" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White"/>
         </StackPanel>
 
         <Button x:Name="searchBtn" Content="Поиск" Grid.Column="1" Background="{x:Null}" Click="searchBNClick" BorderBrush="White" Margin="217,50,0,0" Grid.RowSpan="2"/>
-        <TextBox Name="searchTB" Grid.Row="1" Opacity="0.43" Margin="0,3,50,2" Grid.Column="1"/>
+        <TextBox Name="searchTB" Grid.Row="1" Opacity="0.43" Margin="0,3,50,2" Grid.Column="1" SpellCheck.IsEnabled="True" Language="ru-ru" />
 
+        <Image  Source="Images/iconfm.jpg" Name="Icon" Height="60" VerticalAlignment="Center" Width="90" Grid.Column="0" Margin="22,0,21,0"/>
 
-        <Image  Source="iconfm.jpg" Name="Icon" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="62" Margin="28,0,0,0"/>
         <Label Content="Farmer's Market" FontSize="29" HorizontalAlignment="Center" VerticalAlignment="Center" Height="37" Width="267" Grid.Column="1" FontFamily="Bernard MT Condensed"/>
-        <MenuItem Header="Категории" Padding=" 0 -5 -10 -5" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2" Margin="0,50,0,0">
-            <MenuItem Header="Овощи"/>
-            <MenuItem Header="Фрукты"/>
-            <MenuItem Header="Мясо"/>
-            <MenuItem Header="Разное"/>
-        </MenuItem>
+        <Menu x:Name="Категории" Grid.Column="0" Margin="0,50,0,0" Grid.RowSpan="2">
+            <MenuItem Header="Категории" Padding=" 0 -5 -10 -5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="2" Height="34" Width="133">
+                <MenuItem Header="Овощи"/>
+                <MenuItem Header="Фрукты"/>
+                <MenuItem Header="Мясо"/>
+                <MenuItem Header="Разное"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

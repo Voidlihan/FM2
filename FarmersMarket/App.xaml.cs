@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmersMarket.Domain;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace FarmersMarket
 	/// </summary>
 	public partial class App : Application
 	{
+		public User currentUser { get; set; }
 	}
 }
