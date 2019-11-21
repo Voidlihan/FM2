@@ -1,0 +1,57 @@
+﻿<Window x:Class="FarmersMarket.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FarmersMarket"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Width="300">
+            <Label Content="Вы" VerticalAlignment="Center" FontWeight="Black" Margin="20,0"/>
+            <RadioButton x:Name="sellerRB" Content="Продавец" Height="22" Width="90" FontSize="14"/>
+            <RadioButton x:Name="customerRB" Content="Покупатель" Height="22" Width="93" FontSize="14"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+            <TextBlock HorizontalAlignment="Left" Text="Имя" VerticalAlignment="Center" Width="120"/>
+            <TextBox Name="userFirstName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
+            <TextBlock HorizontalAlignment="Left" Text="Фамилия" VerticalAlignment="Center" Width="120"/>
+            <TextBox Name="userLastName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"/>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3">
+            <TextBlock HorizontalAlignment="Left" Text="Адрес" VerticalAlignment="Center" Width="120"/>
+            <TextBox Name="userAddress" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,30" Grid.Column="1" Grid.RowSpan="6" Visibility="Collapsed">
+            <Menu Margin="20 0 25 0" Background="ForestGreen" FontSize="100" Height="34" Width="172">
+                <MenuItem Header="Избранные продукты" Foreground="White" FontWeight="Bold"  FontSize="15" Padding="3 0 0 0" Height="32" Width="172"/>
+            </Menu>
+            <Menu Background="ForestGreen" Height="34" Width="172">
+                <MenuItem Header="Добавить продукт" Foreground="White" FontWeight="Bold" FontSize="15" Padding="10 0 0 0" Height="32" Width="172"/>
+            </Menu>
+        </StackPanel>
+
+        <Button Grid.Row="4" Grid.Column="0" Content="Зарегестрироваться" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="260" FontSize="20" Click="SignUpButtonClicked"/>
+
+    </Grid>
+</Window>

@@ -8,5 +8,6 @@ namespace FarmersMarket.Domain
 	{
 		public Chat Chat { get; set; }
 		public string Value { get; set; }
+        public virtual User userChat { get; set; }
 	}
 }

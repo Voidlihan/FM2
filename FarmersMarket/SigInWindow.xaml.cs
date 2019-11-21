@@ -23,7 +23,7 @@ namespace FarmersMarket
 	public partial class SignInWindow : Window
 	{
 		private MainWindow mainWindow;
-		static FarmersMarketContext context = new FarmersMarketContext("Server=BorisHOME\\Boris;Database=FarmersMarket;Trusted_Connection=True;");
+		static FarmersMarketContext context = new FarmersMarketContext("Server=A-104-09;Database=FarmersMarket;Trusted_Connection=True;");
 		static AuthService authService = new AuthService(context);
 		static ProfileService profileService = new ProfileService(context);
 
@@ -35,26 +35,21 @@ namespace FarmersMarket
 
 		private void SignUpButtonClick(object sender, RoutedEventArgs e)
 		{
+
+
+
 			if (!authService.isExist(loginSignIn.Text))
 			{
 				(Application.Current as App).currentUser = authService.SignUp(loginSignIn.Text, passwordSignIn.Password);
 				if ((Application.Current as App).currentUser == null)
 				{
 					MessageBox.Show("Введен неверный формат почты или слишком короткий пароль. Аккаунт не зарегестрирован");
+					return;
 				}
 				else
 				{
-					mainWindow.profileButton.Visibility = Visibility.Visible;
-					mainWindow.cartButton.Visibility = Visibility.Visible;
-					mainWindow.signInButton.Visibility = Visibility.Collapsed;
-
-					Customer customer = new Customer
-					{
-						User = (Application.Current as App).currentUser
-					};
-
-					profileService.Add(customer);
-					
+					SignUpWindow signUpWindow = new SignUpWindow();
+					signUpWindow.Show();
 					this.Close();
 				}
 			}

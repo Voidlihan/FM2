@@ -6,26 +6,39 @@
         xmlns:local="clr-namespace:FarmersMarket"
         mc:Ignorable="d"
         Title="FAQ" Height="450" Width="800">
+    
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="353*"/>
-            <RowDefinition Height="38*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="355*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="97*"/>
-            <ColumnDefinition Width="637*"/>
-            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="640*"/>
+            <ColumnDefinition Width="70*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Часто задаваемые вопросы" Grid.Column="1" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Height="36" Width="319" FontFamily="Bernard MT Condensed" Grid.RowSpan="2" FontSize="24" RenderTransformOrigin="0.5,0.5"/>
-        <Image Source="Images/iconfm.jpg" Grid.Column="0" Grid.Row="0"/>
-        <Expander Grid.Column="1" Header="Как зайти/зарегестрироватся на сайте" HorizontalAlignment="Left" Height="44" Margin="0,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="627">
-            <TextBlock Text="Зайдите на главный экран и сверхнем в правой углу нажмите войти"/>
+        <Image Source="Images/faq.jpg" Grid.Column="0" Grid.Row="0"/>
+        <Expander Grid.Column="1" Header="Как зайти/зарегестрироватся на сайте?" HorizontalAlignment="Left" Height="26" Margin="0,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="627">
+            <TextBlock Text="Зайдите на главный экран и сверхнем в правой углу нажмите войти" Margin="0,0,0,-21"/>
 
         </Expander>
-        <Expander Grid.Column="1" Header="Как позвонить в Call center" HorizontalAlignment="Center" Height="58" Margin="0,84,0,0" Grid.Row="1" VerticalAlignment="Top" Width="637">
-            <TextBlock Text="Спуститесь вниз и нажмине на Call center"/>
+        <Expander Grid.Column="1" Header="Как позвонить в Call center?" HorizontalAlignment="Center" Height="25" Margin="0,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="637">
+            <TextBlock Text="Спуститесь вниз и нажмине на Call center" Margin="0,0,0,-34"/>
         </Expander>
+        <Expander Grid.Column="1" Header="Как сделать заказ? " HorizontalAlignment="Center" Height="27" Margin="0,126,0,0" Grid.Row="1" VerticalAlignment="Top" Width="637">
+            <TextBlock Text="Добавьте выбранное вами оборудование (одно или несколько  разных наименований) в корзину 
+                       Перейдя в корзину, при необходимости исправьте количество единиц товара на необходимое вам; 
+                       Заполните свои данные, выберите способ доставки;                                                                   
+                       Нажмите кнопку «Оформить заказ»;                                                                                                  
+                       Выберите способ оплаты;                                                                                                                   
+                       Нажмите кнопку «Закончить заказ»" TextWrapping="Wrap" Margin="0,0,0,-64"/>
+        </Expander>
+        <ListBox Grid.Column="1" Grid.Row="1" Margin="0,158,0,0"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="353,8,0,0" Grid.Row="1" Text="Введите вопрос" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="573,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64"/>
+
 
     </Grid>
 </Window>

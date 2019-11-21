@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:FarmersMarket"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style  TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Background" Value="Green"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>

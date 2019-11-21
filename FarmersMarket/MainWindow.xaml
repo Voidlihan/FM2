@@ -5,44 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FarmersMarket"
         mc:Ignorable="d" Height="450" Width="800" Title="MainScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/MainBG.jpg"/>
+    </Window.Background>
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="133*"/>
-            <ColumnDefinition Width="267*"/>
-            <ColumnDefinition Width="87*"/>
-            <ColumnDefinition Width="208*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="270*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="210*"/>
             <ColumnDefinition Width="105*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
-            <RowDefinition Height="34*"/>
-            <RowDefinition Height="311*"/>
-            <RowDefinition Height="39*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="310*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="0">
-            <Button Name="profileButton" Content="Профиль" Width="80" Height="15" Padding="0 -2 0 0" Margin="20 0 20 0" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden" Click="profileButtonClick"/>
-            <Button Name="signInButton" Content="Вход" Width="62" Height="15" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White" Click="SignInClick" Visibility="Visible"/>
-            <Button Name="cartButton" Content="Корзина" Width="80" Height="15" Padding="0 -2 0 0" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden"/>
+            <Button Name="profileButton" Content="Профиль" Width="80" Height="15" Padding="0 -2 0 0" Margin="20 0 20 0"   Visibility="Hidden" Click="profileButtonClick"/>
+            <Button Name="signInButton" Content="Вход" Width="62" Height="15" Padding="0 -2 0 0"  BorderBrush="White" Click="SignInClick" Visibility="Visible"/>
+            <Button Name="cartButton" Content="Корзина" Width="80" Height="15" Padding="0 -2 0 0"  Visibility="Hidden"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,14,4,0" Grid.Column="1">
-            <Button Content="Информация" Name="Info" Grid.Column="2" Grid.Row="1" Width="80" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White"/>
-            <Button Content="Помощь" Name="Help" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" BorderBrush="White" Background="{x:Null}" Click="helpsClick"/>
-            <Button Content="Call Center" Name="Call_Center" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" Background="{x:Null}" BorderBrush="White"/>
+            <Button Content="Информация" Name="Info" Grid.Column="2" Grid.Row="1" Width="80" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" BorderBrush="White"/>
+            <Button Content="Помощь" Name="Help" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0" BorderBrush="White"  Click="helpsClick"/>
+            <Button Content="Call Center" Name="Call_Center" Grid.Column="2" Grid.Row="1" Width="70" Height="15" Margin="0 0 20 0" Padding="0 -2 0 0"  BorderBrush="White"/>
         </StackPanel>
 
-        <Button x:Name="searchBtn" Content="Поиск" Grid.Column="1" Background="{x:Null}" Click="searchBNClick" BorderBrush="White" Margin="217,50,0,0" Grid.RowSpan="2"/>
+        <Button x:Name="searchBtn" Content="Поиск" Grid.Column="1"  Click="searchBNClick" BorderBrush="White" Margin="217,50,0,0" Grid.RowSpan="2"/>
         <TextBox Name="searchTB" Grid.Row="1" Opacity="0.43" Margin="0,3,50,2" Grid.Column="1" SpellCheck.IsEnabled="True" Language="ru-ru" />
 
         <Image  Source="Images/iconfm.jpg" Name="Icon" Height="60" VerticalAlignment="Center" Width="90" Grid.Column="0" Margin="22,0,21,0"/>
 
         <Label Content="Farmer's Market" FontSize="29" HorizontalAlignment="Center" VerticalAlignment="Center" Height="37" Width="267" Grid.Column="1" FontFamily="Bernard MT Condensed"/>
         <Menu x:Name="Категории" Grid.Column="0" Margin="0,50,0,0" Grid.RowSpan="2">
-            <MenuItem Header="Категории" Padding=" 0 -5 -10 -5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="2" Height="34" Width="133">
+            <MenuItem Header="Категории" Padding=" 0 -5 -10 -5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="2" Height="36" Width="130" Background="#FF11AAB2">
                 <MenuItem Header="Овощи"/>
                 <MenuItem Header="Фрукты"/>
                 <MenuItem Header="Мясо"/>
                 <MenuItem Header="Разное"/>
             </MenuItem>
         </Menu>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="+7172155272 +7172458622 " TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="80"/>
     </Grid>
 </Window>

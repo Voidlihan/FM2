@@ -20,8 +20,6 @@ namespace FarmersMarket
 	/// </summary>
 	public partial class ImageUrlWindow : Window
 	{
-		static FarmersMarketContext context = new FarmersMarketContext("Server=BorisHOME\\Boris;Database=FarmersMarket;Trusted_Connection=True;");
-		static ProfileService profileService = new ProfileService(context);
 
 
 		public ImageUrlWindow()
@@ -31,7 +29,13 @@ namespace FarmersMarket
 
 		private void LoadClick(object sender, RoutedEventArgs e)
 		{
-			profileService.UpdateImage(imageUrl.Text, (Application.Current as App).currentUser);
+			using (var context = new FarmersMarketContext(Constants.ConnectionString))
+			{
+				ProfileService profileService = new ProfileService(context);
+				profileService.UpdateImage(imageUrl.Text, (Application.Current as App).currentUser);
+			}
+			MessageBox.Show("Фотография успешно загружена");
+			this.Close();
 		}
 	}
 }

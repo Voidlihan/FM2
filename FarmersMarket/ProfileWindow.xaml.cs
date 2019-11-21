@@ -20,7 +20,7 @@ namespace FarmersMarket
     /// </summary>
     public partial class ProfileWindow : Window
     {
-		static FarmersMarketContext context = new FarmersMarketContext("Server=BorisHOME\\Boris;Database=FarmersMarket;Trusted_Connection=True;");
+		static FarmersMarketContext context = new FarmersMarketContext("Server=A-104-09;Database=FarmersMarket;Trusted_Connection=True;");
 		static ProfileService profileService = new ProfileService(context);
 
 		public ProfileWindow()
@@ -32,11 +32,12 @@ namespace FarmersMarket
 		{
 			Customer customer = new Customer
 			{
-				FirstName = userFirstName.Text,
+                User = (Application.Current as App).currentUser,
+                FirstName = userFirstName.Text,
 				LastName = userLastName.Text,
 				Address = userAddress.Text
 			};
-			profileService.UpdateProfile(customer, (Application.Current as App).currentUser);
+			profileService.UpdateProfile(customer, (Application.Current as App).currentUser);			
 		}
 
 		private void downloadImageClick(object sender, RoutedEventArgs e)
