@@ -29,11 +29,11 @@ namespace FarmersMarket
 
 		private void LoadClick(object sender, RoutedEventArgs e)
 		{
-			using (var context = new FarmersMarketContext(Constants.ConnectionString))
-			{
-				ProfileService profileService = new ProfileService(context);
-				profileService.UpdateImage(imageUrl.Text, (Application.Current as App).currentUser);
-			}
+            using (var context = new FarmersMarketContext((Application.Current as App).ConnectionString))
+            {
+                ProfileService profileService = new ProfileService(context);
+                profileService.UpdateImage(imageUrl.Text, (Application.Current as App).currentUser);
+            }
 			MessageBox.Show("Фотография успешно загружена");
 			this.Close();
 		}

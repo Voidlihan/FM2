@@ -23,7 +23,7 @@ namespace FarmersMarket
 	public partial class SignInWindow : Window
 	{
 		private MainWindow mainWindow;
-		static FarmersMarketContext context = new FarmersMarketContext("Server=A-104-09;Database=FarmersMarket;Trusted_Connection=True;");
+		static FarmersMarketContext context = new FarmersMarketContext((Application.Current as App).ConnectionString);
 		static AuthService authService = new AuthService(context);
 		static ProfileService profileService = new ProfileService(context);
 
@@ -35,9 +35,6 @@ namespace FarmersMarket
 
 		private void SignUpButtonClick(object sender, RoutedEventArgs e)
 		{
-
-
-
 			if (!authService.isExist(loginSignIn.Text))
 			{
 				(Application.Current as App).currentUser = authService.SignUp(loginSignIn.Text, passwordSignIn.Password);
@@ -48,7 +45,7 @@ namespace FarmersMarket
 				}
 				else
 				{
-					SignUpWindow signUpWindow = new SignUpWindow();
+					SignUpWindow signUpWindow = new SignUpWindow(mainWindow);
 					signUpWindow.Show();
 					this.Close();
 				}

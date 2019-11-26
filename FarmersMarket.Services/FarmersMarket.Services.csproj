@@ -14,4 +14,8 @@
     <ProjectReference Include="..\FarmersMarket.Services.Abstract\FarmersMarket.Services.Abstract.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SearchAddress\" />
+  </ItemGroup>
+
 </Project>

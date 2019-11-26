@@ -6,5 +6,9 @@ namespace FarmersMarket.Domain
 	{
 		public string Name { get; set; } 
 		public virtual ICollection<FavoriteProducts> Customers { get; set; } // Не уверен в необходимости этой части
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

@@ -8,6 +8,6 @@ namespace FarmersMarket.Domain
 	{
 		public Guid Id { get; set; } = Guid.NewGuid();
 		public DateTime CreationDate { get; set; } = DateTime.Now;
-		public DateTime? DeletedDate { get; set; }		
+		public DateTime? DeletedDate { get; set; }
 	}
 }

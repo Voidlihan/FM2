@@ -20,12 +20,17 @@
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="158" Margin="0,54,0,0" Grid.RowSpan="2"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
-            <Button Content="В корзину" Grid.Column="2" HorizontalAlignment="Left" Margin="381,41,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="138" Foreground="White" BorderBrush="{x:Null}" Background="Green" FontSize="20" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="2">
-
+            <Button x:Name="writeToSeller" Content="Написать продавцу" Click="writeToSellerClicked"/> 
+            <!--Тут открывается чат-->
+            <TextBlock x:Name="name" Text="Наименование" TextWrapping="Wrap"/>
+            <TextBlock x:Name="price" Text="Цена" TextWrapping="Wrap"/>
+            <TextBlock x:Name="quantity" Text="Осталось на складе" TextWrapping="Wrap"/>
+            <Button Content="Добавить в корзину" Click="ButtonAddToCart"/>
         </StackPanel>
-        <Button Name="chatButtonToSeller" Content="Написать продавцу" Grid.Column="2" HorizontalAlignment="Left" Margin="375,0,0,0" VerticalAlignment="Center" Height="50" Width="188" FontSize="20" Click="ChatButtonToSeller"/>
+        <Image Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="87,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Тут вообще картинка продукта" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
 
     </Grid>
 </Window>

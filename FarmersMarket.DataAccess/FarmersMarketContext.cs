@@ -27,7 +27,15 @@ namespace FarmersMarket.DataAccess
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(connectionString);
+			optionsBuilder.UseLazyLoadingProxies().UseSqlServer(connectionString);
+		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Chat>()
+		   .HasOne(s => s.Seller)
+		   .WithMany(m => m.Chats)
+		   .OnDelete(DeleteBehavior.NoAction);
 		}
 	}
 }

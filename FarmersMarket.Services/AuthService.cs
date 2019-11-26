@@ -21,7 +21,7 @@ namespace FarmersMarket.Services
 
 		public User SignUp(string email, string password)
 		{
-			if (!IsValidEmail(email) && !IsValidPassword(password)) return null;
+			if (!IsValidEmail(email) || !IsValidPassword(password)) return null;
 			if (isExist(email)) return null;
 
 			var newUser = new User

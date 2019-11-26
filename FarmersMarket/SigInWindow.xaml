@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="UserIcon" Source="Images/user-icon.jpg" Grid.Column="1" Grid.Row="1"/>
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
-            <TextBox x:Name="loginSignIn" Text="Email" Margin="0 48 0 0" Width="220" Height="30" FontSize="16" FontFamily="Javanese Text" FontWeight="Bold" Foreground="#FF9E9A9A"/>
+            <TextBox x:Name="loginSignIn" Text="email" Margin="0 48 0 0" Width="220" Height="30" FontSize="16" FontFamily="Javanese Text" FontWeight="Bold" Foreground="#FF9E9A9A" VerticalContentAlignment="Center" Padding="0 -2 0 0"/>
             <PasswordBox x:Name="passwordSignIn" PasswordChar="*" MinHeight="15" Width="220" Height="30" FontWeight="Bold" FontSize="16" FontFamily="Javanese Text" Foreground="#FF9E9A9A"/>
             <Button Background="ForestGreen" Content="Войти" Margin="0 17 0 0" Width="220" Height="30" Foreground="White" FontFamily="Arial Black" Click="SignInButtonClick"/>
             <TextBlock Margin="108 0 0 0" Text="или" TextWrapping="Wrap" Foreground="ForestGreen" FontWeight="Bold"/>

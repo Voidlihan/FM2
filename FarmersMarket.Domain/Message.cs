@@ -6,8 +6,8 @@ namespace FarmersMarket.Domain
 {
 	public class Message : Entity
 	{
-		public Chat Chat { get; set; }
+		public Guid ChatId { get; set; }
+		public virtual Chat Chat { get; set; }
 		public string Value { get; set; }
-        public virtual User userChat { get; set; }
 	}
 }

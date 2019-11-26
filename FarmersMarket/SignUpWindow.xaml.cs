@@ -20,9 +20,12 @@ namespace FarmersMarket
 	/// </summary>
 	public partial class SignUpWindow : Window
 	{
-		public SignUpWindow()
+		private MainWindow mainWindow;
+
+		public SignUpWindow(MainWindow mainWin)
 		{
 			InitializeComponent();
+			mainWindow = mainWin;
 		}
 
 		private void SignUpButtonClicked(object sender, RoutedEventArgs e)
@@ -37,11 +40,12 @@ namespace FarmersMarket
 					Address = userAddress.Text
 				};
 
-				using (var context = new FarmersMarketContext(Constants.ConnectionString))
+				using (var context = new FarmersMarketContext((Application.Current as App).ConnectionString))
 				{
 					ProfileService profileService = new ProfileService(context);
 					profileService.Add(customer);
 				}
+
 			}
 			else if (sellerRB.IsChecked == true)
 			{
@@ -52,7 +56,8 @@ namespace FarmersMarket
 					LastName = userLastName.Text,
 					Address = userAddress.Text
 				};
-				using (var context = new FarmersMarketContext(Constants.ConnectionString))
+
+				using (var context = new FarmersMarketContext((Application.Current as App).ConnectionString))
 				{
 					ProfileService profileService = new ProfileService(context);
 					profileService.Add(seller);
@@ -63,6 +68,11 @@ namespace FarmersMarket
 				MessageBox.Show("Выберите вашу роль");
 				return;
 			}
+			MessageBox.Show("Аккаунт успешно зарегестрирован.");
+			this.Close();
+			mainWindow.profileButton.Visibility = Visibility.Visible;
+			mainWindow.cartButton.Visibility = Visibility.Visible;
+			mainWindow.signInButton.Visibility = Visibility.Collapsed;
 		}
 	}
 }

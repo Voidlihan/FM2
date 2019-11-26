@@ -14,17 +14,17 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="149*"/>
-            <ColumnDefinition Width="582*"/>
-            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="552*"/>
+            <ColumnDefinition Width="99*"/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Center" Margin="0,55,0,0" Text="Чаты" TextWrapping="Wrap" VerticalAlignment="Top" Grid.RowSpan="2" Height="22" Width="149" FontFamily="Berlin Sans FB Demi" FontSize="22"/>
-        <ListBox Grid.Row="1" Margin="0,29,0,0"/>
-        <TabControl Grid.Column="1" Grid.RowSpan="2" Margin="0,55,0,0">
-            <StackPanel Height="59" Orientation="Horizontal" Margin="0,260,0,0">
-                <TextBlock Text="Сообщение:" TextWrapping="Wrap" Height="22" Width="70"/>
-                <TextBox Name ="textBoxChat" TextWrapping="Wrap" Width="426" Height="22"/>
-                <Button Name="buttonEnter" Content="Отправить" Height="22" Width="68" Click="EnterButton" IsEnabled="{Binding ElementName=textBoxChat, Path=Text.Length, Mode=OneWay}"/>
-            </StackPanel>
+        <ListBox x:Name="listChat" Grid.Row="1" Margin="0,29,0,0"/>
+        <Button x:Name="sendMessageBtn" Content="Отправить" Grid.Column="2" Grid.Row="3" Click="sendMessageBtnClicked"/>
+        <TabControl Grid.Row="1" Grid.Column="1">
+            <ListBox>
+                
+            </ListBox>
         </TabControl>
+        <TextBox x:Name="messageTB" Text="Введите сообщение" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="0,334,0,0" Width="310" Height="23" Grid.RowSpan="2"/>
     </Grid>
 </Window>

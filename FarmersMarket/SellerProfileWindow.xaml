@@ -1,0 +1,60 @@
+﻿<Window x:Class="FarmersMarket.SellerProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FarmersMarket"
+        mc:Ignorable="d"
+        Title="Profile" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+            <TextBlock HorizontalAlignment="Left" Text="Имя" VerticalAlignment="Center" Width="120" Margin="80 0"/>
+            <TextBox  Name="userFirstName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"   VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="3">
+            <TextBlock HorizontalAlignment="Left" Text="Фамилия" VerticalAlignment="Center" Width="120" Margin="80 0"/>
+            <TextBox  Name="userLastName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"  VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="4">
+            <TextBlock HorizontalAlignment="Left" Text="Адрес" VerticalAlignment="Center" Width="120" Margin="80 0"/>
+            <TextBox Name="userAddress" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"  VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+
+        <Image Name="userImage" Margin="150,4,150,3" Grid.Row="1"/>
+        <Button x:Name="downloadImage" HorizontalAlignment="Right" Margin="0,0,100,0" Grid.Row="1" VerticalAlignment="Bottom" Height="43" Width="52" Click="downloadImageClick">
+            <Image Source="Images/upload.png" Height="29" Width="42"/>
+            <Button.Template>
+                <ControlTemplate  TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="{x:Null}"></Ellipse>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></Label>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Сохранить изменения" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="34" Width="248" BorderBrush="ForestGreen" Background="ForestGreen" Foreground="White" FontWeight="Bold" FontSize="15" Click="saveChangesButtonClick"/>
+        <TextBlock HorizontalAlignment="Center" Text="Ваш профиль" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="130" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" >
+            <Button Content="Мои товары" Margin="20 0 0 0" FontSize="18" Height="35" Width="170"/>
+            <Button Content="Добавить товар" Margin="20,0" FontSize="18" Height="35" Width="170" Click="AddProductClick"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

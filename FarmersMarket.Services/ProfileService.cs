@@ -34,6 +34,12 @@ namespace FarmersMarket.Services
 			return customer;
 		}
 
+		public Seller GetSeller(User currentUser)
+		{
+			var seller = context.Sellers.SingleOrDefault(user => user.User.Id == currentUser.Id);
+			return seller;
+		}
+
 		public void UpdateProfile(Customer customerUpdate, User currentUser)
 		{
             var customer = context.Customers.SingleOrDefault(user => user.User.Id == currentUser.Id);
@@ -42,6 +48,17 @@ namespace FarmersMarket.Services
 			customer.LastName = customerUpdate.LastName;
 			customer.Address = customerUpdate.Address;
 			context.Update(customer);
+			context.SaveChanges();
+		}
+
+		public void UpdateProfile(Seller sellerUpdate, User currentUser)
+		{
+			var seller = context.Sellers.SingleOrDefault(user => user.User.Id == currentUser.Id);
+
+			seller.FirstName = sellerUpdate.FirstName;
+			seller.LastName = sellerUpdate.LastName;
+			seller.Address = sellerUpdate.Address;
+			context.Update(seller);
 			context.SaveChanges();
 		}
 

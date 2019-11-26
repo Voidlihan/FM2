@@ -19,12 +19,11 @@ namespace FarmersMarket
     public partial class CartWindows : Window
     {
         //нужно connection string добавить 
-        private const string CONNECTION_STRING = "Server";
         public CartWindows()
         {
             InitializeComponent();
 
-            using (var context = new FarmersMarketContext(CONNECTION_STRING))
+            using (var context = new FarmersMarketContext((Application.Current as App).ConnectionString))
             {
                 LBCarts.ItemsSource = context.Carts;
             }

@@ -2,8 +2,8 @@
 {
 	public class Rating : Entity
 	{
-		public Seller Seller { get; set; }
-		public Customer Customer { get; set; }
+		public virtual Seller Seller { get; set; }
+		public virtual Customer Customer { get; set; }
 		public int Value { get; set; }
 	}
 }

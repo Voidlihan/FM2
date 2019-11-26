@@ -23,23 +23,23 @@
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Width="300">
             <Label Content="Вы" VerticalAlignment="Center" FontWeight="Black" Margin="20,0"/>
             <RadioButton x:Name="sellerRB" Content="Продавец" Height="22" Width="90" FontSize="14"/>
-            <RadioButton x:Name="customerRB" Content="Покупатель" Height="22" Width="93" FontSize="14"/>
+            <RadioButton x:Name="customerRB" Content="Покупатель" Height="22" Width="107" FontSize="14"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
-            <TextBlock HorizontalAlignment="Left" Text="Имя" VerticalAlignment="Center" Width="120"/>
-            <TextBox Name="userFirstName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"/>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+            <TextBlock HorizontalAlignment="Left" Text="Имя" VerticalAlignment="Center" Width="120" Margin="80 0"/>
+            <TextBox  Name="userFirstName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"   VerticalContentAlignment="Center"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
-            <TextBlock HorizontalAlignment="Left" Text="Фамилия" VerticalAlignment="Center" Width="120"/>
-            <TextBox Name="userLastName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"/>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+            <TextBlock HorizontalAlignment="Left" Text="Фамилия" VerticalAlignment="Center" Width="120" Margin="80 0"/>
+            <TextBox  Name="userLastName" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"  VerticalContentAlignment="Center"/>
         </StackPanel>
 
 
-        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3">
-            <TextBlock HorizontalAlignment="Left" Text="Адрес" VerticalAlignment="Center" Width="120"/>
-            <TextBox Name="userAddress" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"/>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="3">
+            <TextBlock HorizontalAlignment="Left" Text="Адрес" VerticalAlignment="Center" Width="120" Margin="80 0"/>
+            <TextBox Name="userAddress" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="41" FontSize="18"   VerticalContentAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,30" Grid.Column="1" Grid.RowSpan="6" Visibility="Collapsed">

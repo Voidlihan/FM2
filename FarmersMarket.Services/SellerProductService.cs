@@ -3,6 +3,7 @@ using FarmersMarket.Domain;
 using FarmersMarket.Services.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FarmersMarket.Services
@@ -16,16 +17,18 @@ namespace FarmersMarket.Services
             this.context = context;
         }
 
-        public SellerProduct AddSellerProduct(Product product, Seller seller, int count, int price)
+        public SellerProduct AddSellerProduct(Product product, Seller seller, int count, int price, string desc, string name)
         {
-            if (count <= 0 && price <= 0) return null;
+            if (count <= 0 || price <= 0 || desc == null || desc == string.Empty) return null;
 
             var newSellerProduct = new SellerProduct
             {
-                Product = product,
-                Seller = seller,
+                ProductId = product.Id,
+                SellerId = seller.Id,
                 Count = count,
-                Price = price
+                Price = price,
+				Description = desc,
+				Name = name
             };
 
             context.SellerProducts.Add(newSellerProduct);
@@ -57,5 +60,15 @@ namespace FarmersMarket.Services
 
             return newSellerProduct;
         }
-    }
+
+        public List<SellerProduct> ShowSellerProducts(string categoryName)
+        {
+            return context.SellerProducts.Where(product => product.Product.Category.Name == categoryName).ToList();
+        }
+
+		public SellerProduct GetSellerProduct(string sellerProductId)
+		{
+			return context.SellerProducts.Where(sP => sP.Id == Guid.Parse(sellerProductId)).ToList().FirstOrDefault<SellerProduct>();
+		}
+	}
 }
